@@ -1,4 +1,6 @@
-﻿class Greeter {
+﻿/// <reference path="Scripts/typings/jquery/jquery.d.ts" />
+
+class Greeter {
     element: HTMLElement;
     span: HTMLElement;
     timerToken: number;
@@ -21,10 +23,8 @@
 
 }
 
-window.onload = () => {
+$(() => {
     var el = document.getElementById('content');
     var greeter = new Greeter(el);
     greeter.start();
-    var ml = new MapLayer();
-    window.alert(ml.width.toString());
-};
+});
