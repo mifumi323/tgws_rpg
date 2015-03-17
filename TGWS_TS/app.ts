@@ -27,4 +27,6 @@ $(() => {
     //var el = document.getElementById('content');
     //var greeter = new Greeter(el);
     //greeter.start();
+    var game = new TGWS_RPG.Game();
+    game.start();
 });

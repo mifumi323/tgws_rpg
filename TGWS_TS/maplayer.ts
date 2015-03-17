@@ -1,7 +1,5 @@
-﻿class MapLayer {
-    public width: number;
-
-    constructor() {
-        this.width = 10;
+﻿module TGWS_RPG {
+    export class MapLayer {
+        private mapdata: MapData;
     }
-} 
+}

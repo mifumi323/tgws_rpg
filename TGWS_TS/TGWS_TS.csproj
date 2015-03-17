@@ -31,6 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="game.ts" />
+    <TypeScriptCompile Include="mapdata.ts" />
     <TypeScriptCompile Include="maplayer.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
