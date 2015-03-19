@@ -30,7 +30,8 @@ var TGWS_RPG;
         function Game() {
         }
         Game.prototype.start = function () {
-            var ml = new TGWS_RPG.MapLayer();
+            var md = new TGWS_RPG.MapData();
+            var ml = new TGWS_RPG.MapLayer(md);
         };
         return Game;
     })();
@@ -50,7 +51,8 @@ var TGWS_RPG;
 var TGWS_RPG;
 (function (TGWS_RPG) {
     var MapLayer = (function () {
-        function MapLayer() {
+        function MapLayer(mapdata) {
+            this.mapdata = mapdata;
         }
         return MapLayer;
     })();
