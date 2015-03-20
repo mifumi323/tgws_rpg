@@ -28,10 +28,37 @@ var TGWS_RPG;
 (function (TGWS_RPG) {
     var Game = (function () {
         function Game() {
+            this.gameWidth = 640;
+            this.gameHeight = 480;
+            this.actualGameWidth = this.gameWidth;
+            this.actualGameHeight = this.gameHeight;
         }
         Game.prototype.start = function () {
             var md = new TGWS_RPG.MapData();
             var ml = new TGWS_RPG.MapLayer(md);
+            var parent = document.getElementById('content');
+            this.mainScreen = new HTMLDivElement();
+            this.mainScreen.style.position = 'relative';
+            this.mainScreen.style.width = this.actualGameWidth + 'px';
+            this.mainScreen.style.height = this.actualGameHeight + 'px';
+            this.mainScreen.style.overflow = '';
+            $(parent).append(this.mainScreen);
+            this.mapCanvas1 = this.createMapCanvas();
+            this.mapCanvas2 = this.createMapCanvas();
+            $(this.mainScreen).append(this.mapCanvas1).append(this.mapCanvas2);
+            this.currentMapCanvas = this.mapCanvas1;
+            this.mapCanvas2.style.left = '-' + this.actualGameWidth + 'px';
+            var context = this.mapCanvas1;
+            var image = new Image();
+        };
+        Game.prototype.createMapCanvas = function () {
+            var canvas = new HTMLCanvasElement();
+            canvas.width = this.gameWidth;
+            canvas.height = this.gameHeight;
+            canvas.style.position = 'absolute';
+            canvas.style.left = '0';
+            canvas.style.top = '0';
+            return canvas;
         };
         return Game;
     })();
