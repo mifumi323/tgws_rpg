@@ -58,6 +58,7 @@ var TGWS_RPG;
         function MapData() {
             this.width = 20;
             this.height = 15;
+            this.data = new Array(this.width * this.height);
         }
         return MapData;
     })();
@@ -65,6 +66,12 @@ var TGWS_RPG;
 })(TGWS_RPG || (TGWS_RPG = {}));
 var TGWS_RPG;
 (function (TGWS_RPG) {
+    var MapChip = (function () {
+        function MapChip() {
+        }
+        return MapChip;
+    })();
+    TGWS_RPG.MapChip = MapChip;
     var MapLayer = (function () {
         function MapLayer(mapdata) {
             this.mapdata = mapdata;

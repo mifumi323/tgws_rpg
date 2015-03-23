@@ -1,4 +1,7 @@
 ﻿module TGWS_RPG {
+    export class MapChip {
+    }
+
     export class MapLayer {
         private mapdata: MapData;
 
