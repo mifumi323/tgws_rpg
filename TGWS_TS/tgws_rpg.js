@@ -1,26 +1,5 @@
 /// <reference path="Scripts/typings/jquery/jquery.d.ts" />
-//class Greeter {
-//    element: HTMLElement;
-//    span: HTMLElement;
-//    timerToken: number;
-//    constructor(element: HTMLElement) {
-//        this.element = element;
-//        this.element.innerHTML += "The time is: ";
-//        this.span = document.createElement('span');
-//        this.element.appendChild(this.span);
-//        this.span.innerText = new Date().toUTCString();
-//    }
-//    start() {
-//        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
-//    }
-//    stop() {
-//        clearTimeout(this.timerToken);
-//    }
-//}
 $(function () {
-    //var el = document.getElementById('content');
-    //var greeter = new Greeter(el);
-    //greeter.start();
     var game = new TGWS_RPG.Game();
     game.start();
 });
@@ -34,30 +13,39 @@ var TGWS_RPG;
             this.actualGameHeight = this.gameHeight;
         }
         Game.prototype.start = function () {
+            var _this = this;
             var md = new TGWS_RPG.MapData();
             var ml = new TGWS_RPG.MapLayer(md);
             var parent = document.getElementById('content');
-            this.mainScreen = new HTMLDivElement();
+            this.mainScreen = document.createElement('div');
             this.mainScreen.style.position = 'relative';
             this.mainScreen.style.width = this.actualGameWidth + 'px';
             this.mainScreen.style.height = this.actualGameHeight + 'px';
-            this.mainScreen.style.overflow = '';
+            this.mainScreen.style.overflow = 'hidden';
             $(parent).append(this.mainScreen);
             this.mapCanvas1 = this.createMapCanvas();
             this.mapCanvas2 = this.createMapCanvas();
             $(this.mainScreen).append(this.mapCanvas1).append(this.mapCanvas2);
             this.currentMapCanvas = this.mapCanvas1;
             this.mapCanvas2.style.left = '-' + this.actualGameWidth + 'px';
-            var context = this.mapCanvas1;
             var image = new Image();
+            image.src = 'image/Ice.png?' + new Date().getTime();
+            image.onload = function () {
+                var context1 = _this.mapCanvas1.getContext('2d');
+                context1.drawImage(image, 0, 0);
+                var context2 = _this.mapCanvas2.getContext('2d');
+                context2.drawImage(image, 32, 32);
+            };
         };
         Game.prototype.createMapCanvas = function () {
-            var canvas = new HTMLCanvasElement();
+            var canvas = document.createElement('canvas');
             canvas.width = this.gameWidth;
             canvas.height = this.gameHeight;
             canvas.style.position = 'absolute';
             canvas.style.left = '0';
             canvas.style.top = '0';
+            canvas.style.width = this.gameWidth + 'px';
+            canvas.style.height = this.gameHeight + 'px';
             return canvas;
         };
         return Game;

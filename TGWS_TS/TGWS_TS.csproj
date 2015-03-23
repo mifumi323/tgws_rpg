@@ -36,7 +36,7 @@
     <TypeScriptCompile Include="game.ts" />
     <TypeScriptCompile Include="mapdata.ts" />
     <TypeScriptCompile Include="maplayer.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <None Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
