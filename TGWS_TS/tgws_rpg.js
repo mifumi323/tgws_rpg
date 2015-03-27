@@ -54,6 +54,12 @@ var TGWS_RPG;
 })(TGWS_RPG || (TGWS_RPG = {}));
 var TGWS_RPG;
 (function (TGWS_RPG) {
+    var MapHit = (function () {
+        function MapHit() {
+        }
+        return MapHit;
+    })();
+    TGWS_RPG.MapHit = MapHit;
     var MapData = (function () {
         function MapData() {
             this.width = 20;
