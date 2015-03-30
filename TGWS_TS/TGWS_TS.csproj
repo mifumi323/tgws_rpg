@@ -22,6 +22,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="index.html" />
+    <None Include="mapchip\00.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="mapchip\00.png" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
@@ -34,6 +38,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="game.ts" />
+    <TypeScriptCompile Include="mapchip.ts" />
     <TypeScriptCompile Include="mapdata.ts" />
     <TypeScriptCompile Include="maplayer.ts" />
     <None Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -47,7 +52,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="mapchip\" />
+    <Folder Include="mapdata\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

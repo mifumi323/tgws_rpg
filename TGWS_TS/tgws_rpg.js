@@ -54,12 +54,28 @@ var TGWS_RPG;
 })(TGWS_RPG || (TGWS_RPG = {}));
 var TGWS_RPG;
 (function (TGWS_RPG) {
-    var MapHit = (function () {
-        function MapHit() {
+    (function (MapHit) {
+        MapHit[MapHit["none"] = 0] = "none";
+        MapHit[MapHit["stop"] = 1] = "stop";
+        MapHit[MapHit["counter"] = 2] = "counter";
+    })(TGWS_RPG.MapHit || (TGWS_RPG.MapHit = {}));
+    var MapHit = TGWS_RPG.MapHit;
+    var MapChipSet = (function () {
+        function MapChipSet() {
         }
-        return MapHit;
+        return MapChipSet;
     })();
-    TGWS_RPG.MapHit = MapHit;
+    TGWS_RPG.MapChipSet = MapChipSet;
+    var MapChipManager = (function () {
+        function MapChipManager() {
+            this.mapchipset = {};
+        }
+        return MapChipManager;
+    })();
+    TGWS_RPG.MapChipManager = MapChipManager;
+})(TGWS_RPG || (TGWS_RPG = {}));
+var TGWS_RPG;
+(function (TGWS_RPG) {
     var MapData = (function () {
         function MapData() {
             this.width = 20;

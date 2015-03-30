@@ -1,8 +1,4 @@
 ﻿module TGWS_RPG {
-    export class MapHit {
-        public hit: number[][];
-    }
-
     export class MapData {
         public width: number;
         public height: number;
